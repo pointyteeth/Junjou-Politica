@@ -1,0 +1,77 @@
+body {
+  //background-color: grey;
+  font-family: Rosario, sans-serif;
+}
+
+h1 {
+  //background-color: blue;
+  display: flex;
+  justify-content: center;
+  font-family: 'Lucian schoenschrift cat', sans-serif;
+  font-size: 72px;
+  margin: 0;
+  padding: 0.2em;
+}
+
+.content {
+  //background-color: red;
+  display: flex;
+  justify-content: center;
+}
+
+#canvas {
+  height: 80vh;
+}
+
+.character-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.characters {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.character {
+  width: 128px;
+}
+
+@font-face {
+  font-family: 'Lucian schoenschrift cat';
+  src: url('fonts/Lucian Schoenschrift CAT.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Kubasta';
+  src: url('fonts/Kubasta.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Rosario';
+  src: url('fonts/Rosario-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Rosario';
+  src: url('fonts/Rosario-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Rosario';
+  src: url('fonts/Rosario-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Rosario';
+  src: url('fonts/Rosario-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
