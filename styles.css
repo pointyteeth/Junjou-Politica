@@ -23,7 +23,7 @@ h1 {
   height: 80vh;
 }
 
-.character-list {
+.character-picker {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,6 +36,10 @@ h1 {
 }
 
 .character {
+  text-align: center;
+}
+
+.character-profile {
   width: 128px;
 }
 
