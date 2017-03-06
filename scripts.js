@@ -6,6 +6,10 @@ characters = {
   "putin-senpai": {
   	"profile": "characters/putin profile.jpg",
   	"image": "characters/putin profile.jpg"
+  },
+  "pepe": {
+  	"profile": "characters/pepe.jpg",
+  	"image": "characters/pepe.jpg"
   }
 };
 
