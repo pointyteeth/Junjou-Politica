@@ -4,8 +4,8 @@ characters = {
   	"image": "characters/trump profile.png"
   },
   "putin-senpai": {
-  	"profile": "characters/putin profile.jpg",
-  	"image": "characters/putin profile.jpg"
+  	"profile": "characters/putin profile.png",
+  	"image": "characters/putin profile.png"
   },
   "pepe": {
   	"profile": "characters/pepe.jpg",
@@ -13,24 +13,62 @@ characters = {
   }
 };
 
+var seme = "trump-kun";
+var uke = "trump-kun";
+var images = {};
+var ctx;
+
+// Run to draw scene with current values
+function drawScene() {
+
+    var sources = {
+      scene: "scene.png",
+      seme: characters[seme]["image"],
+      uke: characters[uke]["image"]
+    };
+
+    function loadImages(sources, callback) {
+      var loadedImages = 0;
+      var numImages = 0;
+      // get num of sources
+      for(var source in sources) {
+        numImages++;
+      }
+      for(var source in sources) {
+        images[source] = new Image();
+        images[source].onload = function() {
+          if(++loadedImages >= numImages) {
+            callback(images);
+          }
+        };
+        images[source].src = sources[source];
+      }
+    }
+
+
+    loadImages(sources, function(images) {
+      ctx.drawImage(images.scene, 0, 0, canvas.width, canvas.height);
+      ctx.drawImage(images.seme, 333, 41, 320, 320);
+      ctx.save();
+      ctx.translate(503, 156);
+      ctx.rotate(0.345);
+      ctx.drawImage(images.uke, 0, 0, 320, 320);
+      ctx.restore();
+    });
+
+}
+
 $( document ).ready(function() {
+
     // Get canvas
     var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
-
-    // Draw basic image
-    var image = new Image();
-    image.src = "sketches.png";
-    image.onload = function () {
-        ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-    }
+    ctx = canvas.getContext("2d");
+    drawScene();
 
     // Load characters into character lists
     var newCharacter;
-    var newTop;
-    var newBottom;
-    var topList = $("#tops");
-    var bottomList = $("#bottoms");
+    var semeList = $("#semes");
+    var ukeList = $("#ukes");
     var template = $("#character-template");
     for (var character in characters) {
       // Create character
@@ -38,25 +76,21 @@ $( document ).ready(function() {
       newCharacter.attr("id", character);
       newCharacter.find("img").attr("src", characters[character]["profile"]);
       newCharacter.find("p").text(character);
-      // Create top version
-      newTop = newCharacter.clone();
-      newTop.click(function() {
-        image.src = characters[this.id]["image"];
-        image.onload = function () {
-          ctx.drawImage(image, 430, 100, 200, 200);
-        }
+      // Create seme version
+      newSeme = newCharacter.clone();
+      newSeme.click(function(event) {
+        seme = $(this).attr("id");
+        drawScene();
       });
-      // Create bottom version
-      newBottom = newCharacter.clone();
-      newBottom.click(function() {
-        image.src = characters[this.id]["image"];
-        image.onload = function () {
-          ctx.drawImage(image, 540, 300, 200, 200);
-        }
+      // Create uke version
+      newUke = newCharacter.clone();
+      newUke.click(function() {
+        uke = $(this).attr("id");
+        drawScene();
       });
       // Add new characters to lists
-      topList.append(newTop);
-      bottomList.append(newBottom);
+      semeList.append(newSeme);
+      ukeList.append(newUke);
     }
     // Remove template
     template.remove();
