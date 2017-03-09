@@ -3,9 +3,17 @@ characters = {
   	"profile": "characters/trump profile.png",
   	"image": "characters/trump profile.png"
   },
+  "clinton-onee-san": {
+  	"profile": "characters/clinton profile.png",
+  	"image": "characters/clinton profile.png"
+  },
   "putin-senpai": {
   	"profile": "characters/putin profile.png",
   	"image": "characters/putin profile.png"
+  },
+  "obama-san": {
+  	"profile": "characters/obama profile.png",
+  	"image": "characters/obama profile.png"
   },
   "pepe": {
   	"profile": "characters/pepe.jpg",
