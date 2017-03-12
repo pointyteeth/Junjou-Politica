@@ -24,6 +24,7 @@ h1 {
 
 #canvas {
   height: 80vh;
+  border: 1px solid black;
 }
 
 .character-picker {
