@@ -31,6 +31,7 @@ function drawScene() {
 
     var sources = {
       scene: "scene.png",
+      effects: "effects.png",
       seme: characters[seme]["image"],
       uke: characters[uke]["image"]
     };
@@ -62,6 +63,7 @@ function drawScene() {
       ctx.rotate(0.345);
       ctx.drawImage(images.uke, 0, 0, 320, 320);
       ctx.restore();
+      ctx.drawImage(images.effects, 0, 0, canvas.width, canvas.height);
     });
 
 }
