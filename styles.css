@@ -5,15 +5,18 @@ body {
 
 h1 {
   //background-color: blue;
-  display: flex;
-  justify-content: center;
   font-family: 'Lucian schoenschrift cat', sans-serif;
   font-size: 72px;
-  margin: 0;
-  padding: 0.2em;
 }
 
-.content {
+#header{
+  //background-color: green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#content {
   //background-color: red;
   display: flex;
   justify-content: center;
