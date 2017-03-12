@@ -43,8 +43,28 @@ h1 {
   text-align: center;
 }
 
+.character a {
+  text-decoration: none;
+  color: black;
+}
+
 .character-profile {
   width: 128px;
+}
+
+.character:hover {
+  background: repeating-linear-gradient(
+    -45deg,
+    #bbb,
+    #bbb 1px,
+    white 1px,
+    white 3px
+  );
+  text-shadow:
+   -1px -1px 0 white,
+    1px -1px 0 white,
+   -1px 1px 0 white,
+    1px 1px 0 white;
 }
 
 @font-face {

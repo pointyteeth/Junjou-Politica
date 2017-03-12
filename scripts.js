@@ -7,13 +7,17 @@ characters = {
   	"profile": "characters/clinton profile.png",
   	"image": "characters/clinton profile.png"
   },
-  "putin-senpai": {
-  	"profile": "characters/putin profile.png",
-  	"image": "characters/putin profile.png"
+  "sanders-chan": {
+  	"profile": "characters/sanders profile.png",
+  	"image": "characters/sanders profile.png"
   },
   "obama-san": {
   	"profile": "characters/obama profile.png",
   	"image": "characters/obama profile.png"
+  },
+  "putin-senpai": {
+  	"profile": "characters/putin profile.png",
+  	"image": "characters/putin profile.png"
   },
   "pepe": {
   	"profile": "characters/pepe.jpg",
