@@ -92,14 +92,19 @@ $( document ).ready(function() {
       newCharacter.find("p").text(character);
       // Create seme version
       newSeme = newCharacter.clone();
+      newSeme.attr("id", character)
       newSeme.click(function(event) {
+        $("#semes #" + seme).removeClass("character-selected");
         seme = $(this).attr("id");
+        $(this).addClass("character-selected");
         drawScene();
       });
       // Create uke version
       newUke = newCharacter.clone();
       newUke.click(function() {
+        $("#ukes #" + uke).removeClass("character-selected");
         uke = $(this).attr("id");
+        $(this).addClass("character-selected");
         drawScene();
       });
       // Add new characters to lists

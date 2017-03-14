@@ -1,65 +1,100 @@
-body {
-  //background-color: grey;
-  font-family: Rosario, sans-serif;
+html, body {
+  font-family: Smack Attack, sans-serif;
+  font-size: 10pt;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  //overflow: hidden;
 }
 
 h1 {
-  //background-color: blue;
-  font-family: 'Lucian schoenschrift cat', sans-serif;
-  font-size: 72px;
+  font-family: 'FabFelt', sans-serif;
+  font-size: 56pt;
+  margin: 0.2em 0 0.05em;
+}
+
+h2 {
+    font-weight: 400;
+    margin: 0.5em 0 2em;
+}
+
+h3 {
+    margin: 0;
+}
+
+#page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 #header{
-  //background-color: green;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 #content {
-  //background-color: red;
   display: flex;
   justify-content: center;
+  height: 100%;
 }
 
-#canvas {
-  height: 80vh;
-  border: 1px solid black;
-}
-
-.character-picker {
+#middle {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
+}
+
+#canvas {
+  border: 1px solid black;
+  height: 90%;
+  flex: 1;
+}
+
+#buttons {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+}
+
+#buttons a {
+    background-color: black;
+    margin: 0.5em 2em;
+    padding: 1em;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    flex: 1;
+    text-align: center;
+}
+
+.character-picker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 12em;
 }
 
 .characters {
   display: flex;
   flex-direction: column;
+  padding: 0 1em;
+  overflow-y: scroll;
   list-style-type: none;
 }
 
 .character {
   text-align: center;
+  margin: 0.5em 0;
 }
 
 .character a {
   text-decoration: none;
   color: black;
-}
-
-.character-profile {
-  width: 128px;
-}
-
-.character:hover {
-  background: repeating-linear-gradient(
-    -45deg,
-    #bbb,
-    #bbb 1px,
-    white 1px,
-    white 3px
-  );
   text-shadow:
    -1px -1px 0 white,
     1px -1px 0 white,
@@ -67,39 +102,52 @@ h1 {
     1px 1px 0 white;
 }
 
+.character-profile {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.character-name {
+    padding: 0 0.5em;
+}
+
+.character:hover {
+  background: repeating-linear-gradient(
+    -45deg,
+    #ddd,
+    #ddd 1px,
+    white 1px,
+    white 5px
+  );
+  border: 1px solid lightgrey;
+}
+
+.character-selected, character:active {
+  background: repeating-linear-gradient(
+    -45deg,
+    #bbb,
+    #bbb 1px,
+    white 1px,
+    white 3px
+  );
+  border: 1px solid black;
+}
+
 @font-face {
-  font-family: 'Lucian schoenschrift cat';
-  src: url('fonts/Lucian Schoenschrift CAT.ttf') format('truetype');
+  font-family: 'FabFelt';
+  src: url('fonts/fabfeltscript.otf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Kubasta';
-  src: url('fonts/Kubasta.ttf') format('truetype');
+  font-family: 'Smack Attack';
+  src: url('fonts/smackattackbb-regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Rosario';
-  src: url('fonts/Rosario-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Rosario';
-  src: url('fonts/Rosario-Bold.otf') format('opentype');
+  font-family: 'Smack Attack';
+  src: url('fonts/smackattackbb-bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
-}
-@font-face {
-  font-family: 'Rosario';
-  src: url('fonts/Rosario-BoldItalic.otf') format('opentype');
-  font-weight: 700;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Rosario';
-  src: url('fonts/Rosario-Italic.otf') format('opentype');
-  font-weight: 400;
-  font-style: italic;
 }

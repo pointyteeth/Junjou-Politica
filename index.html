@@ -15,31 +15,41 @@
 <body>
   <script src="scripts.js"></script>
 
-  <div id="header">
-    <h1>Junjou Politica</h1>
-    <h2>A beautiful package stimulus creator</h1>
-  </div>
+  <div id="page">
 
-  <div id="content">
+      <div id="header">
+        <h1>Junjou Politica</h1>
+        <h2>A beautiful package stimulus creator</h1>
+      </div>
 
-    <div class="character-picker">
-      <h2>Top</h2>
-      <ul id="semes" class="characters">
-        <li id="character-template" class="character"><a href="#">
-          <img class="character-profile" src="characters/pepe.jpg">
-          <p class="character-name">Name</p>
-        </a></li>
-      </ul>
-    </div>
+      <div id="content">
 
-    <!-- <img id="canvas" src="sketches.png"> -->
-    <canvas id="canvas" width="1024px" height="1024px"></canvas>
+        <div class="character-picker">
+          <h3>Top</h3>
+          <ul id="semes" class="characters">
+            <li id="character-template" class="character"><a href="#">
+              <img class="character-profile" src="characters/pepe.jpg">
+              <p class="character-name">Name</p>
+            </a></li>
+          </ul>
+      </div>
 
-    <div class="character-picker">
-      <h2>Bottom</h2>
-      <ul id="ukes" class="characters">
-      </ul>
-    </div>
+        <div id="middle">
+            <canvas id="canvas" width="1024px" height="1024px"></canvas>
+            <div id="buttons">
+                <a href="#">Share</a>
+                <a href="#">Save</a>
+                <a href="#">What???</a>
+            </div>
+        </div>
+
+        <div class="character-picker">
+          <h3>Bottom</h3>
+          <ul id="ukes" class="characters">
+          </ul>
+        </div>
+
+      </div>
 
   </div>
 
