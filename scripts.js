@@ -1,27 +1,27 @@
 characters = {
   "trump-kun": {
   	"profile": "characters/trump profile.png",
-  	"image": "characters/trump profile.png"
+  	"image": "characters/trump image.png"
   },
   "clinton-onee-san": {
   	"profile": "characters/clinton profile.png",
-  	"image": "characters/clinton profile.png"
+  	"image": "characters/clinton image.png"
   },
   "sanders-chan": {
   	"profile": "characters/sanders profile.png",
-  	"image": "characters/sanders profile.png"
+  	"image": "characters/sanders image.png"
   },
   "obama-san": {
   	"profile": "characters/obama profile.png",
-  	"image": "characters/obama profile.png"
+  	"image": "characters/obama image.png"
   },
   "putin-senpai": {
   	"profile": "characters/putin profile.png",
-  	"image": "characters/putin profile.png"
+  	"image": "characters/putin image.png"
   },
   "pepe": {
-  	"profile": "characters/pepe.jpg",
-  	"image": "characters/pepe.jpg"
+  	"profile": "characters/pepe profile.png",
+  	"image": "characters/pepe image.png"
   }
 };
 
