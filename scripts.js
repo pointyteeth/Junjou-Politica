@@ -123,7 +123,7 @@ $( document ).ready(function() {
     // Save the image
     $("#save-button").click(function() {
         var dataURL = canvas.toDataURL();
-        console.log(dataURL);
+        window.open(dataURL);
     });
 
     // Show and hide the about section
