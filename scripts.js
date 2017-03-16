@@ -1,4 +1,10 @@
 characters = {
+    "start seme": {
+    	"image": "characters/start seme.png"
+    },
+    "start uke": {
+      	"image": "characters/start uke.png"
+      },
   "trump-kun": {
   	"profile": "characters/trump profile.png",
   	"image": "characters/trump image.png"
@@ -25,8 +31,8 @@ characters = {
   }
 };
 
-var seme = "trump-kun";
-var uke = "trump-kun";
+var seme = "start seme";
+var uke = "start uke";
 var images = {};
 var ctx;
 
@@ -84,7 +90,7 @@ $( document ).ready(function() {
     var semeList = $("#semes");
     var ukeList = $("#ukes");
     var template = $("#character-template");
-    for (var character in characters) {
+    for(var character in characters) { if("profile" in characters[character]) {
       // Create character
       newCharacter = template.clone();
       newCharacter.attr("id", character);
@@ -110,7 +116,7 @@ $( document ).ready(function() {
       // Add new characters to lists
       semeList.append(newSeme);
       ukeList.append(newUke);
-    }
+  }}
     // Remove template
     template.remove();
 
