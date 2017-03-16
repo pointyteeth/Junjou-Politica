@@ -122,7 +122,7 @@ $( document ).ready(function() {
 
     // Save the image
     $("#save-button").click(function() {
-        var dataURL = canvas.toDataURL();
+        var dataURL = canvas.toDataURL("image/png");
         window.open(dataURL);
     });
 
