@@ -122,8 +122,8 @@ $( document ).ready(function() {
 
     // Save the image
     $("#save-button").click(function() {
-        var dataURL = canvas.toDataURL();
-        console.log(dataURL);
+        var dataURL = canvas.toDataURL("image/png");
+        window.open(dataURL);
     });
 
     // Show and hide the about section
