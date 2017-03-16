@@ -120,4 +120,19 @@ $( document ).ready(function() {
     // Remove template
     template.remove();
 
+    // Save the image
+    $("#save-button").click(function() {
+        var dataURL = canvas.toDataURL();
+        console.log(dataURL);
+    });
+
+    // Show and hide the about section
+    $("#what-button").click(function() {
+      $("#what").show();
+    });
+    $("#close").click(function() {
+      $("#what").hide();
+    });
+    $("#what").hide();
+
 });
