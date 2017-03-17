@@ -1,8 +1,9 @@
 @media (orientation: portrait) {
 
-    body {
+    html, body {
         font-size: 24pt;
         //background-color: pink;
+        height: initial;
     }
 
     h1 {
@@ -19,7 +20,7 @@
     }
 
     #canvas {
-        width: 70%;
+        width: 80%;
         height: auto;
     }
 
@@ -30,21 +31,25 @@
     #buttons a {
     	transform: rotate(-90deg);
     	//transform-origin: left top 0;
+        margin: 1em 2em;
     }
 
     .character-picker {
         width: 100%;
         align-items: flex-start;
         justify-content: flex-start;
-        flex: 1 0 0;
     }
 
     .characters {
         flex-direction: row;
     }
 
+    .character {
+    }
+
     .character-profile {
-        //flex-basis: 0;
+        height: 4em;
+        width: auto;
     }
 
 }
