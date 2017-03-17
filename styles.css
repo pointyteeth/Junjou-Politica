@@ -8,13 +8,14 @@ html, body {
 
 h1 {
   font-family: 'Fabfelt', sans-serif;
-  font-size: 48pt;
+  font-size: 5em;
   margin: 0.2em 0 0.05em;
 }
 
 h2 {
     font-weight: 400;
     margin: 0.5em 0 0.25em;
+    text-align: center;
 }
 
 h3 {

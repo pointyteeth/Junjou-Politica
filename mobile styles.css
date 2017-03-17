@@ -1,0 +1,50 @@
+@media (orientation: portrait) {
+
+    body {
+        font-size: 24pt;
+        //background-color: pink;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    #content {
+        flex-direction: column;
+    }
+
+    #middle {
+        order: -1;
+        flex-direction: row;
+    }
+
+    #canvas {
+        width: 70%;
+        height: auto;
+    }
+
+    #buttons {
+        flex-direction: column;
+    }
+
+    #buttons a {
+    	transform: rotate(-90deg);
+    	//transform-origin: left top 0;
+    }
+
+    .character-picker {
+        width: 100%;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex: 1 0 0;
+    }
+
+    .characters {
+        flex-direction: row;
+    }
+
+    .character-profile {
+        //flex-basis: 0;
+    }
+
+}
