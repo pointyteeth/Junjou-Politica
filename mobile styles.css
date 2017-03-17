@@ -4,34 +4,50 @@
         font-size: 24pt;
         //background-color: pink;
         height: initial;
+        width: 100%;
     }
 
     h1 {
         font-size: 3em;
     }
 
+    #page {
+        width: 100%;
+    }
+
+    #header {
+        width: 100%;
+    }
+
     #content {
         flex-direction: column;
+        width: 100%;
     }
 
     #middle {
         order: -1;
         flex-direction: row;
+        width: 100%;
     }
 
     #canvas {
-        width: 80%;
+        width: 90%;
         height: auto;
     }
 
     #buttons {
         flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        align-self: center;
+        //display: none;
+        width: 5%;
     }
 
     #buttons a {
     	transform: rotate(-90deg);
-    	//transform-origin: left top 0;
-        margin: 1em 2em;
+    	//transform-origin: left bottom 0;
+        margin: 2em 0;
     }
 
     .character-picker {
@@ -42,13 +58,14 @@
 
     .characters {
         flex-direction: row;
+        width: 100%;
     }
 
     .character {
     }
 
     .character-profile {
-        height: 4em;
+        height: 6em;
         width: auto;
     }
 
