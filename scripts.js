@@ -5,27 +5,33 @@ characters = {
     "start uke": {
       	"image": "characters/start uke.png"
       },
-  "trump-kun": {
-  	"profile": "characters/trump profile.png",
+  "trump": {
+    "name": "trump-kun",
+    "profile": "characters/trump profile.png",
   	"image": "characters/trump image.png"
   },
-  "clinton-onee-san": {
+  "clinton": {
+    "name": "clinton-onee-san",
   	"profile": "characters/clinton profile.png",
   	"image": "characters/clinton image.png"
   },
-  "sanders-chan": {
+  "sanders": {
+    "name": "sanders-chan",
   	"profile": "characters/sanders profile.png",
   	"image": "characters/sanders image.png"
   },
-  "obama-san": {
+  "obama": {
+    "name": "obama-san",
   	"profile": "characters/obama profile.png",
   	"image": "characters/obama image.png"
   },
-  "putin-senpai": {
+  "putin": {
+    "name": "putin-senpai",
   	"profile": "characters/putin profile.png",
   	"image": "characters/putin image.png"
   },
   "pepe": {
+    "name": "pepe",
   	"profile": "characters/pepe profile.png",
   	"image": "characters/pepe image.png"
   }
@@ -93,25 +99,37 @@ $( document ).ready(function() {
     for(var character in characters) { if("profile" in characters[character]) {
       // Create character
       newCharacter = template.clone();
-      newCharacter.attr("id", character);
       newCharacter.find("img").attr("src", characters[character]["profile"]);
-      newCharacter.find("p").text(character);
+      newCharacter.find("p").text(characters[character]["name"]);
       // Create seme version
       newSeme = newCharacter.clone();
-      newSeme.attr("id", character)
+      newSeme.attr("id", "seme-" + character);
       newSeme.click(function(event) {
-        $("#semes #" + seme).removeClass("character-selected");
-        seme = $(this).attr("id");
+        $("#seme-" + seme).removeClass("character-selected");
+        seme = $(this).attr("id").replace("seme-", "");
         $(this).addClass("character-selected");
         drawScene();
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'Seme',
+          eventAction: 'set',
+          eventLabel: seme
+        });
       });
       // Create uke version
       newUke = newCharacter.clone();
+      newUke.attr("id", "uke-" + character);
       newUke.click(function() {
-        $("#ukes #" + uke).removeClass("character-selected");
-        uke = $(this).attr("id");
+        $("#uke-" + uke).removeClass("character-selected");
+        uke = $(this).attr("id").replace("uke-", "");
         $(this).addClass("character-selected");
         drawScene();
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'Uke',
+          eventAction: 'set',
+          eventLabel: uke
+        });
       });
       // Add new characters to lists
       semeList.append(newSeme);
@@ -124,14 +142,31 @@ $( document ).ready(function() {
     $("#save-button").click(function() {
         var dataURL = canvas.toDataURL("image/png");
         window.open(dataURL);
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'Button',
+          eventLabel: 'save'
+        });
     });
 
     // Show and hide the about section
     $("#what-button").click(function() {
       $("#what").show();
+      ga('send', {
+        hitType: 'event',
+        eventCategory: 'Button',
+        eventAction: 'open',
+        eventLabel: 'what'
+      });
     });
     $("#close").click(function() {
-      $("#what").hide();
+        $("#what").hide();
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'Button',
+          eventAction: 'close',
+          eventLabel: 'what'
+        });
     });
     $("#what").hide();
 
