@@ -115,6 +115,12 @@ $( document ).ready(function() {
           eventAction: 'set',
           eventLabel: seme
         });
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'Pairing',
+          eventAction: 'set',
+          eventLabel: seme + 'x' + uke
+        });
       });
       // Create uke version
       newUke = newCharacter.clone();
@@ -129,6 +135,12 @@ $( document ).ready(function() {
           eventCategory: 'Uke',
           eventAction: 'set',
           eventLabel: uke
+        });
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'Pairing',
+          eventAction: 'set',
+          eventLabel: seme + 'x' + uke
         });
       });
       // Add new characters to lists
@@ -145,7 +157,7 @@ $( document ).ready(function() {
         ga('send', {
           hitType: 'event',
           eventCategory: 'Button',
-          eventLabel: 'save'
+          eventAction: 'save',
         });
     });
 
