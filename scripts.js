@@ -5,32 +5,32 @@ characters = {
     "start uke": {
       	"image": "characters/start uke.png"
       },
-  "trump": {
+  "Trump": {
     "name": "trump-kun",
     "profile": "characters/trump profile.png",
   	"image": "characters/trump image.png"
   },
-  "clinton": {
+  "Clinton": {
     "name": "clinton-onee-san",
   	"profile": "characters/clinton profile.png",
   	"image": "characters/clinton image.png"
   },
-  "sanders": {
+  "Sanders": {
     "name": "sanders-chan",
   	"profile": "characters/sanders profile.png",
   	"image": "characters/sanders image.png"
   },
-  "obama": {
+  "Obama": {
     "name": "obama-san",
   	"profile": "characters/obama profile.png",
   	"image": "characters/obama image.png"
   },
-  "putin": {
+  "Putin": {
     "name": "putin-senpai",
   	"profile": "characters/putin profile.png",
   	"image": "characters/putin image.png"
   },
-  "pepe": {
+  "Pepe": {
     "name": "pepe",
   	"profile": "characters/pepe profile.png",
   	"image": "characters/pepe image.png"
@@ -41,9 +41,22 @@ var seme = "start seme";
 var uke = "start uke";
 var images = {};
 var ctx;
+var mousePressed = false;
+var startPoint = {"x": 0, "y": 0};
+var newPoint = {"x": 0, "y": 0};
+var bgH = 0 // Background hue value, out of 256
+var HUE_RATE = 0.5; // Rate of change of the hue, in hue out of 256 to pixels moved by mouse
+var bgL = 100; // Background lightness value, out of 100
+var LIGHTNESS_RATE = 0.1; // Rate of change of the lightness, in percentage to pixels moved by mouse
 
 // Run to draw scene with current values
 function drawScene() {
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if(!mousePressed) {
+        ctx.fillStyle = "hsl(" + bgH + ", 100%, " + bgL +"%)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
 
     var sources = {
       scene: "scene.png",
@@ -149,6 +162,34 @@ $( document ).ready(function() {
   }}
     // Remove template
     template.remove();
+
+    // Change the canvas color
+    $("#canvas").mousedown(function (mouse) {
+        mousePressed = true;
+        drawScene();
+        startPoint["x"] = mouse.pageX - this.offsetLeft;
+        startPoint["y"] = mouse.pageY - this.offsetTop;
+    });
+    $("#canvas").mousemove(function (mouse) {
+        if (mousePressed) {
+            newPoint["x"] = mouse.pageX - this.offsetLeft;
+            newPoint["y"] = mouse.pageY - this.offsetTop;
+            bgH = (bgH + HUE_RATE*(newPoint["x"] - startPoint["x"]))%256;
+            bgL = Math.max(90, Math.min(100, (bgL - LIGHTNESS_RATE*(newPoint["y"] - startPoint["y"]))));//MAXsmthMIN0
+            startPoint["x"] = newPoint["x"];
+            startPoint["y"] = newPoint["y"];
+            $("#canvas").css("background-color", "hsl(" + bgH + ", 100%, " + bgL +"%)");
+            $("body").css("background-color", "hsla(" + bgH + ", 100%, " + bgL +"%, 0.4)");
+        }
+    });
+    $("#canvas").mouseup(function (mouse) {
+        mousePressed = false;
+        drawScene();
+    });
+	$("#canvas").mouseleave(function (mouse) {
+        mousePressed = false;
+        drawScene();
+    });
 
     // Save the image
     $("#save-button").click(function() {
