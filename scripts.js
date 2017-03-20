@@ -1,4 +1,4 @@
-characters = {
+var characters = {
     "start seme": {
     	"image": "characters/start seme.png"
     },
@@ -37,6 +37,9 @@ characters = {
   }
 };
 
+var effects = ["effects/steam.png", "effects/flowers.png"];
+var effect = 0;
+
 var seme = "start seme";
 var uke = "start uke";
 var images = {};
@@ -60,7 +63,7 @@ function drawScene() {
 
     var sources = {
       scene: "scene.png",
-      effects: "effects.png",
+      effects: effects[effect],
       seme: characters[seme]["image"],
       uke: characters[uke]["image"]
     };
@@ -189,6 +192,15 @@ $( document ).ready(function() {
 	$("#canvas").mouseleave(function (mouse) {
         mousePressed = false;
         drawScene();
+    });
+
+    // Switch the effects
+    $("#canvas").click(function (mouse) {
+        if((mouse.pageY - this.offsetTop)*(canvas.height/$("#canvas").height()) > canvas.height*0.75) {
+          effect = (effect + 1)%effects.length;
+          console.log(effect);
+          drawScene();
+        }
     });
 
     // Save the image
