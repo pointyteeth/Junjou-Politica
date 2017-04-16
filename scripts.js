@@ -30,6 +30,16 @@ var characters = {
   	"profile": "characters/putin profile.png",
   	"image": "characters/putin image.png"
   },
+  "Trudeau": {
+    "name": "trudeau-chan",
+  	"profile": "characters/trudeau profile.png",
+  	"image": "characters/trudeau image.png"
+  },
+  "Stalin": {
+    "name": "stalin-senpai",
+  	"profile": "characters/stalin profile.png",
+  	"image": "characters/stalin image.png"
+  },
   "Pepe": {
     "name": "pepe",
   	"profile": "characters/pepe profile.png",
@@ -39,7 +49,6 @@ var characters = {
 
 var effects = ["effects/steam.png", "effects/flowers.png"];
 var effect = 0;
-
 var seme = "start seme";
 var uke = "start uke";
 var images = {};
@@ -65,7 +74,7 @@ function drawScene() {
       scene: "scene.png",
       effects: effects[effect],
       seme: characters[seme]["image"],
-      uke: characters[uke]["image"]
+      uke: characters[uke]["image"],
     };
 
     function loadImages(sources, callback) {
@@ -96,6 +105,10 @@ function drawScene() {
       ctx.drawImage(images.uke, 0, 0, 320, 320);
       ctx.restore();
       ctx.drawImage(images.effects, 0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "black";
+      ctx.font = "32px Smack Attack";
+      //ctx.fillText("S-senpai, it's so.../nYUUUUUGE!!", 10, 50);
     });
 
 }
