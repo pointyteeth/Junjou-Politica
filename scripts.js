@@ -47,8 +47,19 @@ var characters = {
   }
 };
 
+var speech = { //speech[seme][uke]["position"]
+  "Putin": {
+    "Trump": {
+      "uke": "S-senpai, \nit's so...\nYUUUUUGE!!"
+    }
+  }
+}
+
 var effects = ["effects/steam.png", "effects/flowers.png"];
 var effect = 0;
+var speechBubbles = {"seme": new Image(), "uke": new Image()};
+var SPEECH_SIZE = 32;
+var LINE_HEIGHT = 36;
 var seme = "start seme";
 var uke = "start uke";
 var images = {};
@@ -104,13 +115,29 @@ function drawScene() {
       ctx.rotate(0.345);
       ctx.drawImage(images.uke, 0, 0, 320, 320);
       ctx.restore();
+
       ctx.drawImage(images.effects, 0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = "black";
-      ctx.font = "32px Smack Attack";
-      //ctx.fillText("S-senpai, it's so.../nYUUUUUGE!!", 10, 50);
+      if(seme in speech && uke in speech[seme]) {
+        ctx.fillStyle = "black";
+        if("seme" in speech[seme][uke]) {
+          ctx.drawImage(speechBubbles["seme"], 0, 0, canvas.width, canvas.height);
+          fillLines(speech[seme][uke]["seme"], 206, 156);
+        }
+        if("uke" in speech[seme][uke]) {
+          ctx.drawImage(speechBubbles["uke"], 0, 0, canvas.width, canvas.height);
+          fillLines(speech[seme][uke]["uke"], 814, 822);
+        }
+      }
     });
 
+}
+
+function fillLines(text, x, y) { // Draw a multiline string of text, delimited by the newline character '\n', centered at x and y
+  lines = text.split('\n');
+  for(line in lines) {
+    ctx.fillText(lines[line], x, y + SPEECH_SIZE + LINE_HEIGHT*line - lines.length*LINE_HEIGHT/2);
+  }
 }
 
 $( document ).ready(function() {
@@ -118,6 +145,10 @@ $( document ).ready(function() {
     // Get canvas
     var canvas = document.getElementById("canvas");
     ctx = canvas.getContext("2d");
+    ctx.font = SPEECH_SIZE + "px Smack Attack";
+    ctx.textAlign="center";
+    speechBubbles["seme"].src = "effects/seme speech.png";
+    speechBubbles["uke"].src = "effects/uke speech.png";
     drawScene();
 
     // Load characters into character lists
