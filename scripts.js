@@ -6,7 +6,7 @@ var characters = {
       	"image": "characters/start uke.png"
       },
   "Trump": {
-    "name": "trump-kun",
+    "name": "trump-hime",
     "profile": "characters/trump profile.png",
   	"image": "characters/trump image.png"
   },
@@ -50,7 +50,13 @@ var characters = {
 var speech = { //speech[seme][uke]["position"]
   "Putin": {
     "Trump": {
-      "uke": "S-senpai, \nit's so...\nYUUUUUGE!!"
+      "uke": "S-senpai, it's so...\nYUUUUUGE!!"
+    }
+  },
+  "Pepe": {
+    "Pepe": {
+      "seme": "Feels\ngood\nman",
+      "uke": "Feels\ngood\nman"
     }
   }
 }
@@ -278,5 +284,11 @@ $( document ).ready(function() {
         });
     });
     $("#what").hide();
+
+    // Hide the warning section
+    $("#close-warning").click(function() {
+        $("#page").removeClass("blurred");
+        $("#warning").hide();
+    });
 
 });

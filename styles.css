@@ -31,6 +31,10 @@ h3 {
     //overflow: hidden;
 }
 
+.blurred {
+    filter: blur(2px);
+}
+
 #header{
   display: flex;
   flex-direction: column;
@@ -136,7 +140,7 @@ h3 {
   border: 1px solid black;
 }
 
-#what {
+.overlay {
     position: fixed;
     overflow-y: scroll;
     top: 0;
@@ -150,10 +154,14 @@ h3 {
     font-size: 12pt;
 }
 
-#what-content {
+.overlay-content {
     max-width: 40em;
     line-height: 1.5em;
     padding: 2em;
+}
+
+#warning {
+    text-align: center;
 }
 
 #what-content ul {
