@@ -36,7 +36,7 @@ var characters = {
   	"image": "characters/trudeau image.png"
   },
   "Stalin": {
-    "name": "stalin-senpai",
+    "name": "stalin-kun",
   	"profile": "characters/stalin profile.png",
   	"image": "characters/stalin image.png"
   },
@@ -48,9 +48,39 @@ var characters = {
 };
 
 var speech = { //speech[seme][uke]["position"]
+  "Trump": {
+    "Sanders": {
+      "seme": "I'll do you\nso good, it'll\nbecome a\npre-existing\ncondition...!",
+      "uke": "U-unnnh!"
+    }
+  },
+  "Clinton": {
+    "Sanders": {
+      "seme": "Hrn... I'm...\ntoo big to fail!",
+      "uke": "Hng-!",
+    },
+    "Trump": {
+      "uke": "N-nooo, not in\n my southern\nwhite house!!"
+    }
+  },
+  "Sanders": {
+    "Sanders": {
+      "seme": "A- ahnnnnn...",
+      "uke": "Huff...   \n   Huff...",
+    }
+  },
   "Putin": {
     "Trump": {
       "uke": "S-senpai, it's so...\nYUUUUUGE!!"
+    },
+    "Sanders": {
+      "seme": "I am the law...\nand I have\ngrabbed you\nby your\nspecial place."
+    }
+  },
+  "Trudeau": {
+    "Trump": {
+      "seme": "I can feel\nyou squeezing\naround my\npipeline!",
+      "uke": "I-it's expanding...!"
     }
   },
   "Pepe": {
