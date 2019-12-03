@@ -10,11 +10,6 @@ var characters = {
     "profile": "characters/trump profile.png",
   	"image": "characters/trump image.png"
   },
-  "Clinton": {
-    "name": "clinton-onee-san",
-  	"profile": "characters/clinton profile.png",
-  	"image": "characters/clinton image.png"
-  },
   "Sanders": {
     "name": "sanders-chan",
   	"profile": "characters/sanders profile.png",
@@ -24,6 +19,16 @@ var characters = {
     "name": "obama-san",
   	"profile": "characters/obama profile.png",
   	"image": "characters/obama image.png"
+  },
+  "Clinton": {
+    "name": "clinton-onee-san",
+  	"profile": "characters/clinton profile.png",
+  	"image": "characters/clinton image.png"
+  },
+  "Zuckerberg": {
+    "name": "zucc-kun",
+  	"profile": "characters/zuckerberg profile.png",
+  	"image": "characters/zuckerberg image.png"
   },
   "Putin": {
     "name": "putin-senpai",
