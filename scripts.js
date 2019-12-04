@@ -56,6 +56,9 @@ var speech = { //speech[seme][uke]["position"]
   "Putin": {
     "Trump": {
       "uke": "S-senpai, it's so...\nYUUUUUGE!!"
+    },
+    "Zuckerberg": {
+      "uke": "I love doing it\nin our\nhuman suits..."
     }
   },
   "Pepe": {
