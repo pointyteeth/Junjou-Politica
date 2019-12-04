@@ -10,11 +10,6 @@ var characters = {
     "profile": "characters/trump profile.png",
   	"image": "characters/trump image.png"
   },
-  "Clinton": {
-    "name": "clinton-onee-san",
-  	"profile": "characters/clinton profile.png",
-  	"image": "characters/clinton image.png"
-  },
   "Sanders": {
     "name": "sanders-chan",
   	"profile": "characters/sanders profile.png",
@@ -24,6 +19,16 @@ var characters = {
     "name": "obama-san",
   	"profile": "characters/obama profile.png",
   	"image": "characters/obama image.png"
+  },
+  "Clinton": {
+    "name": "clinton-onee-san",
+  	"profile": "characters/clinton profile.png",
+  	"image": "characters/clinton image.png"
+  },
+  "Zuckerberg": {
+    "name": "zucc-kun",
+  	"profile": "characters/zuckerberg profile.png",
+  	"image": "characters/zuckerberg image.png"
   },
   "Putin": {
     "name": "putin-senpai",
@@ -75,6 +80,9 @@ var speech = { //speech[seme][uke]["position"]
     },
     "Sanders": {
       "seme": "I am the law...\nand I have\ngrabbed you\nby your\nspecial place."
+    },
+    "Zuckerberg": {
+      "uke": "I love doing it\nin our\nhuman suits..."
     }
   },
   "Trudeau": {
